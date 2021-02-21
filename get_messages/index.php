@@ -14,8 +14,11 @@ $query = "SELECT * FROM message";
 
 $statement = $db->prepare($query);
 
-$result = $statement->execute();
+$statement->execute();
+$result = $statement->fetchAll();
 $statement->closeCursor();
+
+echo json_encode($result);
 
 $query = "DELETE FROM message";
 
@@ -23,5 +26,3 @@ $statement = $db->prepare($query);
 
 $statement->execute();
 $statement->closeCursor();
-
-echo json_encode($result);
