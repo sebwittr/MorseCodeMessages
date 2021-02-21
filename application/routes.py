@@ -27,6 +27,7 @@ def get_messages():
   if os.environ.get("get_password") == password:
     ret = {"response": [(m.sender, m.content) for m in Message.query.all()]}
     Message.query.delete()
+    db.session.commit()
     return ret
   return "No bueno"
 
