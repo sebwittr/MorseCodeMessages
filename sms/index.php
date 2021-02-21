@@ -1,7 +1,7 @@
 <?php
 include "../main.php";
 
-require_once './vendor/autoload.php';
+require_once '../vendor/autoload.php';
 use Twilio\TwiML\MessagingResponse;
 
 $response = new MessagingResponse();
