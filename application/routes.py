@@ -28,6 +28,6 @@ def get_messages():
     ret = {"response": [(m.sender, m.content) for m in Message.query.all()]}
     Message.query.delete()
     return ret
-  return -1
+  return "No bueno"
 
   
