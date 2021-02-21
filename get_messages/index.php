@@ -10,11 +10,18 @@ if ($pwd != getenv("get_password")) {
   exit();
 }
 
-$query = "SELECT * FROM message; DELETE FROM message;";
+$query = "SELECT * FROM message";
 
 $statement = $db->prepare($query);
 
 $result = $statement->execute();
+$statement->closeCursor();
+
+$query = "DELETE FROM message";
+
+$statement = $db->prepare($query);
+
+$statement->execute();
 $statement->closeCursor();
 
 echo json_encode($result);
