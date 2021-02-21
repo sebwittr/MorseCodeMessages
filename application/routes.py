@@ -25,7 +25,7 @@ def sms_reply():
 def get_messages():
   password = request.args.get('password')
   if os.environ.get("get_password") == password:
-    ret = Message.query.all()
+    ret = {"response": [(m.sender, m.content) for m in Message.query.all()]}
     Message.query.delete()
     return ret
   return -1
