@@ -1,7 +1,7 @@
 from . import db
 
 class Message(db.Model):
-     __tablename__ = 'message'
+    __tablename__ = 'message'
     message_id = db.Column(
         db.Integer,
         primary_key=True
