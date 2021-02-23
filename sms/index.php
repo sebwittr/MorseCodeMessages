@@ -21,6 +21,6 @@ $statement->bindValue(":content", $content);
 $statement->execute();
 $statement->closeCursor();
 
-$response->message('Hi, Im Ross Newman and I like to wear diapers and poop myself!');
+$response->message('Message was sent to the Morse Code Bot!');
 
 echo $response;
